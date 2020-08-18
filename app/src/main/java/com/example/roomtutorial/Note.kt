@@ -21,4 +21,6 @@ class Note(var title: String, var description: String, var priority: Int) {
     private var changeNameTest: String = ""
 
 
+//    Composite Primary keys
+//    @Entity(primaryKeys = arrayOf("firstName", "lastName"))
 }

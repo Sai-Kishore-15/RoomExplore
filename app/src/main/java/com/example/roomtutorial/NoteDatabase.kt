@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import androidx.sqlite.db.SupportSQLiteDatabase
 
 // The Database that couples all the table classes
@@ -14,6 +15,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 // abstract function is used by Room and returns a NoteDao object on the repo
 
 @Database(entities = [Note::class], version = 1)
+
 abstract class NoteDatabase : RoomDatabase() {
     companion object {
         var instance: NoteDatabase? = null

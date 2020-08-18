@@ -38,10 +38,10 @@ class MainActivity : AppCompatActivity() {
         val layoutManager = LinearLayoutManager(this)
         layoutManager.orientation = LinearLayoutManager.VERTICAL
         rv_mainPage.layoutManager = layoutManager
-        rv_mainPage.setHasFixedSize(true)
 
         adapter = NoteAdapter()
         rv_mainPage.adapter = adapter
+        rv_mainPage.setHasFixedSize(true)
 
         initNoteViewModel()
 
@@ -84,7 +84,7 @@ class MainActivity : AppCompatActivity() {
 
         noteViewModel.allNotes.observe(this, object : Observer<List<Note>> {
             override fun onChanged(t: List<Note>?) {
-                adapter.setNotes(t!!)
+                adapter.submitList(t!!)
                 Toast.makeText(this@MainActivity, "DataChanged", Toast.LENGTH_LONG).show()
             }
         })
